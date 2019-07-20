@@ -1,3 +1,9 @@
 ---
 install_packages:
   - 'ejabberd'
+install_files:
+  - owner:              'root'
+    group:              'root'
+    mode:               '0644'
+    src:                'files/conf/ejabberd'
+    dest:               '/etc/default/ejabberd'
