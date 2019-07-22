@@ -81,6 +81,9 @@ log_rate_limit: 100
 ##   - "example.org"
 ##
 hosts:
+  - "neuronpointer.net"
+  - "partybus.neuronpointer.net"
+  - "partybus"
   - "localhost"
 
 ##
