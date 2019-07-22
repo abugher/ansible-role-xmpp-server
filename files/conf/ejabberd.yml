@@ -11,7 +11,7 @@ listen:
     port:                       5222
     ip:                         "::"
     module:                     ejabberd_c2s
-    certfile:                   "/etc/ssl/certs/partybus.pem"
+    certfile:                   "/etc/ejabberd/partybus.pem"
     starttls:                   true
     protocol_options:
       - "no_sslv3"
@@ -33,10 +33,10 @@ listen:
     web_admin:                  true
     http_bind:                  true
     tls:                        true
-    certfile:                   "/etc/ssl/certs/partybus.pem"
+    certfile:                   "/etc/ejabberd/partybus.pem"
 disable_sasl_mechanisms:        "digest-md5"
 s2s_use_starttls:               optional
-s2s_certfile:                   "/etc/ssl/certs/partybus.pem"
+s2s_certfile:                   "/etc/ejabberd/partybus.pem"
 s2s_protocol_options:
   - "no_sslv3"
 auth_method:                    internal

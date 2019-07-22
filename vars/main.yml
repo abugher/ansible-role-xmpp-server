@@ -7,9 +7,13 @@ install_files:
     mode:               '0644'
     src:                'files/conf/ejabberd.yml'
     dest:               '/etc/ejabberd/ejabberd.yml'
+template_files:
+  - owner:              'root'
+    group:              'ejabberd'
+    mode:               '0640'
+    src:                'templates/ejabberd.pem.j2'
+    dest:               "/etc/ejabberd/{{ inventory_hostname }}.pem"
 enable_services:
-  - 'ejabberd'
-start_services:
   - 'ejabberd'
 restart_services:
   - 'ejabberd'
