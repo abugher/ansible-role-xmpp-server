@@ -19,7 +19,6 @@ listen:
     shaper:                     c2s_shaper
     access:                     c2s
     zlib:                       true
-    resend_on_timeout:          if_offline
   - 
     port:                       5269
     ip:                         "::"
@@ -95,7 +94,6 @@ modules:
   mod_configure:                {} # requires mod_adhoc
   mod_disco:                    {}
   mod_echo:                     {}
-  mod_irc:                      {}
   mod_http_bind:                {}
   mod_last:                     {}
   mod_muc: 
