@@ -1,18 +1,16 @@
 ---
 install_packages:
   - 'ejabberd'
+add_users_to_groups:
+  - user:               'ejabberd'
+    groups:
+      - 'sslkey'
 install_files:
   - owner:              'root'
     group:              'root'
     mode:               '0644'
     src:                'files/conf/ejabberd.yml'
     dest:               '/etc/ejabberd/ejabberd.yml'
-template_files:
-  - owner:              'root'
-    group:              'ejabberd'
-    mode:               '0640'
-    src:                'templates/ejabberd.pem.j2'
-    dest:               "/etc/ejabberd/{{ inventory_hostname }}.pem"
 enable_services:
   - 'ejabberd'
 restart_services:

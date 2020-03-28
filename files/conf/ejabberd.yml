@@ -6,24 +6,25 @@ hosts:
   - "partybus.neuronpointer.net"
   - "partybus"
   - "localhost"
+certfiles:
+  - "/etc/ssl/certs/partybus.pem"
+  - "/etc/ssl/certs/chain.pem"
+  - "/etc/ssl/private/partybus.pem"
 listen: 
-  - 
+  -
     port:                       5222
     ip:                         "::"
     module:                     ejabberd_c2s
-    certfile:                   "/etc/ejabberd/partybus.pem"
     starttls:                   true
-    protocol_options:
-      - "no_sslv3"
     max_stanza_size:            65536
     shaper:                     c2s_shaper
     access:                     c2s
     zlib:                       true
-  - 
+  -
     port:                       5269
     ip:                         "::"
     module:                     ejabberd_s2s_in
-  - 
+  -
     port:                       5280
     ip:                         "::"
     module:                     ejabberd_http
@@ -32,12 +33,8 @@ listen:
     web_admin:                  true
     http_bind:                  true
     tls:                        true
-    certfile:                   "/etc/ejabberd/partybus.pem"
 disable_sasl_mechanisms:        "digest-md5"
 s2s_use_starttls:               optional
-s2s_certfile:                   "/etc/ejabberd/partybus.pem"
-s2s_protocol_options:
-  - "no_sslv3"
 auth_method:                    internal
 auth_password_format:           scram
 shaper:
