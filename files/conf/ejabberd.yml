@@ -35,7 +35,8 @@ listen:
     tls:                        true
 disable_sasl_mechanisms:        "digest-md5"
 s2s_use_starttls:               optional
-auth_method:                    internal
+#auth_method:                    internal
+auth_method:                    [pam]
 auth_password_format:           scram
 shaper:
   normal:                       1000

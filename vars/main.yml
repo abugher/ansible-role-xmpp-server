@@ -1,6 +1,7 @@
 ---
 install_packages:
   - 'ejabberd'
+  - 'erlang-p1-pam'
 add_users_to_groups:
   - user:               'ejabberd'
     groups:
@@ -14,4 +15,6 @@ install_files:
 enable_services:
   - 'ejabberd'
 restart_services:
+  - 'ejabberd'
+start_services:
   - 'ejabberd'
