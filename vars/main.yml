@@ -12,6 +12,11 @@ install_files:
     mode:               '0644'
     src:                'files/conf/ejabberd.yml'
     dest:               '/etc/ejabberd/ejabberd.yml'
+adjust_files:
+  - owner:              'root'
+    group:              'root'
+    mode:               '4755'
+    path:               '/usr/lib/erlang/p1_pam/bin/epam'
 enable_services:
   - 'ejabberd'
 restart_services:
