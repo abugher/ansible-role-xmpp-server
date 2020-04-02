@@ -3,8 +3,10 @@
 - include:                      '../tasks/add_users_to_groups.yml'
 - include:                      '../tasks/install_files.yml'
 - include:                      '../tasks/adjust_files.yml'
+- include:                      '../tasks/lines_in_files.yml'
 - include:                      '../tasks/enable_services.yml'
 - include:                      '../tasks/restart_services.yml'
   when:                         install_files_result.changed
                                 or adjust_files_result.changed
+                                or lines_in_files_result.changed
 - include:                      '../tasks/start_services.yml'

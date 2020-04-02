@@ -17,9 +17,17 @@ adjust_files:
     group:              'root'
     mode:               '4755'
     path:               '/usr/lib/erlang/p1_pam/bin/epam'
+lines_in_files:
+  - dest:               '/etc/ssh/sshd_config'
+    line:               '# AllowUsers user1 user2'
+    regexp:             '^AllowUsers '
+  - dest:               '/etc/ssh/sshd_config'
+    line:               'PasswordAuthentication         no'
+    regexp:             '^PasswordAuthentication '
 enable_services:
   - 'ejabberd'
 restart_services:
   - 'ejabberd'
+  - 'ssh'
 start_services:
   - 'ejabberd'
