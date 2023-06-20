@@ -23,4 +23,3 @@ restart_services:
   - 'ejabberd'
 start_services:
   - 'ejabberd'
-  - 'ssl_identity'
